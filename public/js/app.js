@@ -31,6 +31,7 @@ $(document).ready(function() {
         /* Saves and displays the comment */
         comment: function(obj) {
             $button = obj;
+            $($button).attr('disabled', 'disabled');
 
             var inputs = {
                 parent_id: $('#comment-reply-box #parent_id').val(),
