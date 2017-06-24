@@ -18,8 +18,7 @@ class Comments extends Model
     ];
 
     protected $guarded = ['id'];
-
-    protected $count;
+    protected $parents = 0;
 
     public function parent()
     {
@@ -41,6 +40,19 @@ class Comments extends Model
         }
 
         return $this->parents;
+    }
+
+    protected static function boot()
+    {
+        static::creating(function ($model) {
+            $count = $model->count($model);
+
+            if ($count > 2) {
+                return false;
+            } else {
+                return true;
+            }
+        });
     }
 
 }

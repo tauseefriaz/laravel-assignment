@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var cover = $('#cover');
     var comments = {
+        /* Displays the comment box and adds the overlay div */
         reply: function(obj) {
             var commentId = $(obj).closest('.comments').attr('comment-id');
             
@@ -21,11 +22,13 @@ $(document).ready(function() {
             }, 2000);
         },
 
+        /* Closes the overlay div and comment box */
         close: function(){
             $('#comment-reply-box').remove();
             $(cover).css('display', 'none');
         },
 
+        /* Saves and displays the comment */
         comment: function(obj) {
             $button = obj;
 

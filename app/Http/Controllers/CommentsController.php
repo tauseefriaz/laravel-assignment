@@ -25,8 +25,8 @@ class CommentsController extends Controller
         $inputs = Input::all()['data'];
 
         $rules = array(
-            'name'      => 'required',
-            'comment'   => 'required',
+            'name'    => 'required',
+            'comment' => 'required',
         );
 
         $validator = Validator::make($inputs, $rules);
